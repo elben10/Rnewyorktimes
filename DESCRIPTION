@@ -1,0 +1,11 @@
+Package: Rnewyorktimes
+Title: Access New York Times API
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Jakob Jul", "Elben", , "elbenjakobjul@gmail.com", role = c("aut", "cre"))  
+    )
+Description: Provides a simple interface to acess New York Times API
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
