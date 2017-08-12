@@ -5,6 +5,10 @@ Authors@R: c(
     person("Jakob Jul", "Elben", , "elbenjakobjul@gmail.com", role = c("aut", "cre"))  
     )
 Description: Provides a simple interface to acess New York Times API
+Imports: httr,
+         jsonlite,
+         rlang,
+         rstudioapi
 License: MIT
 Encoding: UTF-8
 LazyData: true
