@@ -22,3 +22,8 @@ is_token_set <- function(token) {
 is_whole_number <- function(x) {
   abs(x - round(x)) < .Machine$double.eps
 }
+
+sys_time <- function(numeric = FALSE, format = "%Y-%m-%d %H:%M:%S %Z") {
+  res <- format(Sys.time(), format)
+  if (numeric) as.numeric(res) else res
+}
