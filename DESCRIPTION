@@ -7,8 +7,10 @@ Authors@R: c(
 Description: Provides a simple interface to acess New York Times API
 Imports: httr,
          jsonlite,
+         purrr,
          rlang,
-         rstudioapi
+         rstudioapi,
+         tibble
 License: MIT
 Encoding: UTF-8
 LazyData: true
