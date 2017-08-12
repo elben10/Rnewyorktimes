@@ -18,3 +18,7 @@ is_token_set <- function(token) {
     abort("A token must either be set as the token argument or by the nyt_token function")
   }
 }
+
+is_whole_number <- function(x) {
+  abs(x - round(x)) < .Machine$double.eps
+}
