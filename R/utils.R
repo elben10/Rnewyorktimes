@@ -39,3 +39,20 @@ request_failed <- function(resp, parsed) {
     ))
   }
 }
+
+# This function is copied from the httr package see (https://github.com/r-lib/httr/blob/577e2161a16611c714b5bcee96ca44aa5f787068/R/progress.R)
+
+bytes <- function(x, digits = 3, ...) {
+  power <- min(floor(log(abs(x), 1000)), 4)
+  if (power < 1) {
+    unit <- "B"
+  } else {
+    unit <- c("kB", "MB", "GB", "TB")[[power]]
+    x <- x / (1000 ^ power)
+  }
+
+  formatted <- format(signif(x, digits = digits), big.mark = ",",
+                      scientific = FALSE)
+
+  paste0(formatted, " ", unit)
+}
