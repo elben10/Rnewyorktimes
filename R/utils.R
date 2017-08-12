@@ -33,10 +33,9 @@ is_json <- function(resp) {
 request_failed <- function(resp, parsed) {
   if (http_error(resp)) {
     abort(sprintf(
-      "New York Times API request failed [%s]\n%s\n<%s>",
+      "New York Times API request failed [%s]\n%s",
       status_code(resp),
-      parsed$message,
-      parsed$documentation_url
+      parsed$message
     ))
   }
 }
