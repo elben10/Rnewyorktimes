@@ -17,6 +17,7 @@ is_token_set <- function(token) {
   if (is_empty(token_env$token) & is_missing(token)) {
     abort("A token must either be set as the token argument or by the nyt_token function")
   }
+  if (is_missing(token)) token_env$token else token
 }
 
 is_whole_number <- function(x) {
