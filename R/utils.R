@@ -1,7 +1,15 @@
 token_env <- rlang::new_environment()
 NULL
 
+#' Set API token
+#'
+#' The function stores the token in an environment, which allows the package functions to access the key,
+#' without the need of an token argument, which must be typed each time the function is used. Another reason
+#' to store the token this way is that there is no need to store the token in a variable, which would be
+#' stored in the Rhistory file.
 #' @export
+#' @examples
+#' \dontrun{nyt_token()}
 nyt_token <- function() {
   token_env$token <- rstudioapi::askForPassword("Please enter New York Times API token")
 }

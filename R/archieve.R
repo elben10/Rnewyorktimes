@@ -1,8 +1,21 @@
 #' @import rlang
 #' @importFrom httr GET http_type http_error status_code content
 #' @importFrom purrr modify_if map
+NULL
 
+#' Get articles from NYT Archieve
+#'
+#' The function returns a tibble as default, which contains all New York Times articles of the specified
+#' year and month. Articles are available from 1851 and up to the present year and month.
+#'
+#' @param month the desired month provided as a wholenumber
+#' @param year the desired year provided as a wholenumber
+#' @param tibble if TRUE the API result is formatted and returned as a tibble, else a complete response
+#' is provided
+#' @seealso \link[Rnewyorktimes]{nyt_token}
 #' @export
+#' @examples
+#' \dontrun{nyt_archieve(month = 1, year = 1970) #Remember to set token}
 nyt_archieve <- function(month = 1, year = 1970, tibble = TRUE ) {
   token <- is_token_set()
   archieve_input_success(month = month, year = year)
@@ -79,7 +92,6 @@ print.NewYorkTimesAPI_archieve <- function(x, ...) {
   }
 }
 
-#' @export
 archieve_tibble <- function(x) {
   col01 = as.character(modify_if(map(x, ~.x[["web_url"]]), is_null, ~NA))
   col02 = as.character(modify_if(map(x, ~.x[["snippet"]]), is_null, ~NA))
