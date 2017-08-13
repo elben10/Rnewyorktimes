@@ -10,7 +10,8 @@ Imports: httr,
          purrr,
          rlang,
          rstudioapi,
-         tibble
+         tibble,
+         utils
 License: MIT
 Encoding: UTF-8
 LazyData: true

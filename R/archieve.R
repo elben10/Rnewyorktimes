@@ -75,7 +75,7 @@ print.NewYorkTimesAPI_archieve <- function(x, ...) {
     class(res) <- c("tbl_df", "tbl", "data.frame")
     print(res)
   } else {
-    cat(str(x, max.level = 1, give.attr = FALSE))
+    cat(utils::str(x, max.level = 1, give.attr = FALSE))
   }
 }
 
@@ -101,7 +101,7 @@ archieve_tibble <- function(x) {
   col18 = modify_if(map(x, ~.x[["word_count"]]), is_null, ~NA)
   col19 = modify_if(map(x, ~.x[["slideshow_credits"]]), is_null, ~NA)
 
-  tibble(web_url = col01,
+  tibble::tibble(web_url = col01,
          snippet = col02,
          lead_paragraph = col03,
          print_page = col04,
